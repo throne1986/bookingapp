@@ -173,9 +173,9 @@ This is not a production deployment. It's not optimized and it won't be fast for
 * [MongoDb](https://www.mongodb.com/) - NoSQL database program,
 * [TypeScript](https://www.typescriptlang.org/) - Superset of JavaScript, ,
 
-```
+
 Note : I choosed to use those frameworks and language due to my level of understand for bulding full stak app 
-``
+
 ## Contributing
 
 Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
