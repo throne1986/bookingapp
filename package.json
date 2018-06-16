@@ -1,18 +1,23 @@
 {
-  "name": "express-demo",
+  "name": "movies-database",
   "version": "1.0.0",
-  "description": "",
+  "description": "a simple movie database Rest API",
   "main": "index.js",
   "scripts": {
     "dev": "nodemon server.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Geofrey Julius Zellah",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.18.3",
+    "bootstrap": "^3.3.7",
+    "cors": "^2.8.4",
     "express": "^4.16.3",
+    "jquery": "^3.3.1",
     "mongodb": "^2.2.33",
-    "nodemon": "^1.17.5"
+    "node-rest-client": "^3.1.0",
+    "nodemon": "^1.17.5",
+    "request": "^2.87.0"
   }
 }
