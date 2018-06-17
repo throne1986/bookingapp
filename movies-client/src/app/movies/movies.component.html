@@ -50,21 +50,21 @@
 </div>
 
 <div class="panel panel-default">
-<div class="panel-heading">
-<h3 class="panel-title">In Theaters</h3>
-</div>
+    <div class="panel-heading">
+        <h3 class="panel-title">In Theaters</h3>
+    </div>
 <div class="panel-body">
 <div class="row">
     <div *ngFor="let movie of theatersList;let i=index" class="col-md-2">
-        <div *ngIf="i < 6">
-        <img *ngIf="movie.poster_path" class="thumbnail" src="http://image.tmdb.org/t/p/w500/{{movie.poster_path}}">
-        <h4>{{movie.title}}</h4>
-        <p>{{movie.release_date}}</p>
-        <p><a class="btn btn-default" routerLink="/movie{{movie.id}}" role="button">View details &raquo;</a></p>
+            <div *ngIf="i < 6">
+                <img *ngIf="movie.poster_path" class="thumbnail" src="http://image.tmdb.org/t/p/w500/{{movie.poster_path}}">
+                <h4>{{movie.title}}</h4>
+                <p>{{movie.release_date}}</p>
+                <p><a class="btn btn-default" routerLink="/movie{{movie.id}}" role="button">View details &raquo;</a></p>
+                </div>
+            </div>
         </div>
     </div>
-</div>
-</div>
 </div>
 
 <div class="panel panel-default movies-table-panel">

@@ -8,28 +8,20 @@ import { Location } from '@angular/common';
 })
 export class CreateMovieComponent {
     movie: any;
-
-    public constructor(private http: Http, private location: Location) {
+    constructor(private http: Http, private location: Location) {
         this.movie = {
-            'tittle': '',
-            'genre': '',
-            'formats': {
-                'digital': false,
-                'bluray': false,
-                'dvd': false
-            }
+            'title': ''
         };
     }
-
-    public save() {
-        if (this.movie.tittle && this.movie.genre) {
-            const headers = new Headers({ 'Content-Type': 'application/json' });
+    save() {
+        if (this.movie.title) {
+            const headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' });
             const options = new RequestOptions({ 'headers': headers });
             this.http.post('http://localhost:8000/movies', JSON.stringify(this.movie), options)
                 .subscribe(result => {
-                    this.location.back();
+                    //  this.location.back();
                 });
+
         }
     }
-
 }

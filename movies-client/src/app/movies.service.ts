@@ -43,8 +43,8 @@ export class MoviesService {
       .then(this.handleData)
       .catch(this.handleError);
   }
-  createReview(review: any): Promise<any> {
-    return this.http.post(this.apiUrl, review)
+  createReview(review: string): Promise<any> {
+    return this.http.post(this.apiUrl + this.reviewUrl, review)
                .toPromise()
                .then(this.handleData)
                .catch(this.handleError);

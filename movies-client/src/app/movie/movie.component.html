@@ -1,39 +1,50 @@
 <div *ngIf="movie">
-        <div class="panel panel-default">
-      <div class="panel-heading">
-        <h3 class="panel-title">{{movie.title}} </h3>
-      </div>
-      <div class="panel-body">
-        <div class="row">
-            <div class="col-md-5">
-                <img class="thumbnail" src="http://image.tmdb.org/t/p/w500/{{movie.poster_path}}">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">{{movie.title}} </h3>
+    </div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-5">
+          <img class="thumbnail" src="http://image.tmdb.org/t/p/w500/{{movie.poster_path}}">
+        </div>
+        <div class="col-md-7">
+          <ul class="list-group">
+            <li class="list-group-item">Genres:
+              <span *ngFor="let genre of movie.genres">{{genre.name}}, </span>
+            </li>
+            <li class="list-group-item">Release Date: {{movie.release_date}}</li>
+          </ul>
+          <br>
+          <a *ngIf="movie.homepage" href="{{movie.homepage}}" target="_blank" class="btn btn-default zero">Visit Movie Website</a>
+        </div>
+        <div *ngFor="let review of review.results" class="col-md-7">
+          <ul class="list-group">
+            <li class="list-group-item">Author: {{review.author}}</li>
+            <li class="list-group-item">Comments: {{review.content}}</li>
+            <li class="list-group-item">Comments Link:
+              <a href="{{review.url}}">Visit comments link</a>
+            </li>
+          </ul>
+          <br>
+        </div>
+        <div class="col-md-7">
+          <form (ngSubmit)="addReview(addreview)">
+            <div class="form-group movie-username">
+              <label for="author">Name:</label>
+              <input type="text" class="form-control movie-username_text" id="usr" [(ngModel)]="addreview.author" name="author">
             </div>
-            <div class="col-md-7">
-                <ul class="list-group">
-                    <li class="list-group-item">Genres: <span *ngFor="let genre of movie.genres">{{genre.name}}, </span></li>    
-                    <li class="list-group-item">Release Date: {{movie.release_date}}</li> 
-                </ul>
-                <br>
-                <a *ngIf="movie.homepage" href="{{movie.homepage}}" target="_blank" class="btn btn-default zero">Visit Movie Website</a>
+            <div class="form-group movie-textarea">
+              <label for="movie-textarea_label description">Do you like the movie? leave us a comment below</label>
+              <textarea class="form-control rounded-0" 
+              id="movie-textarea_textarea" #description="ngModel" rows="10"
+              [(ngModel)]="addreview.description" 
+              name="description"></textarea>
             </div>
-            <div *ngFor="let review of review.results" class="col-md-7" >
-                    <ul class="list-group">
-                            <li class="list-group-item">Author: {{review.author}}</li>
-                            <li class="list-group-item">Comments: {{review.content}}</li>
-                            <li class="list-group-item">Comments Link: 
-                                    <a href="{{review.url}}">Visit comments link</a>
-                            </li>
-                    </ul>
-                    <br>       
-            </div>
-            <div class="col-md-7">
-                 <div class="form-group movie-textarea">
-                    <label for="movie-textarea_label">Do you like the movie? leave us a comment below</label>
-                    <textarea class="form-control rounded-0" id="movie-textarea_textarea" rows="10"></textarea>
-                 </div>
-                 <button type="submit" class="btn btn-primary">Submit</button>
-             </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
         </div>
       </div>
-    </div>   
+    </div>
+  </div>
 </div>
