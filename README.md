@@ -69,6 +69,23 @@ Shut it down manually with
 ``
 Ctrl-C.
 ``
+### Running the project locally
+for backend run do the following
+```
+in cmd run : cd movies_database
+```
+```
+in cmd run: npm run dev 
+```
+you will see we are live at port 8000
+
+### for front end please do the following:
+```
+in cmd  when your inside a main folder: movies-database run: cd movies-client
+```
+```
+in cmd run : ng serve
+```
 
 if you followe all step up to you, the app should run smoothly
 
