@@ -43,6 +43,12 @@ export class MoviesService {
       .then(this.handleData)
       .catch(this.handleError);
   }
+  createReview(review: any): Promise<any> {
+    return this.http.post(this.apiUrl, review)
+               .toPromise()
+               .then(this.handleData)
+               .catch(this.handleError);
+  }
 
   private handleData(res: any) {
     const body = res.json();

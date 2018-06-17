@@ -11,9 +11,21 @@ import {ActivatedRoute} from '@angular/router';
 export class MovieComponent implements OnInit {
   movie: object;
   review: {};
+  addreview: any;
+  addreviews: any[];
   constructor(private router: ActivatedRoute, private moviesService: MoviesService) {
     this.movie = [];
     this.review = [];
+    this.addreview = [];
+    this.addreviews = [];
+  }
+  addReview(addreview: any): void {
+    if (!addreview) { return; }
+    this.moviesService.createReview(addreview)
+      .then(reviews => {
+       console.log(reviews);
+       this.addreviews.push(reviews.addreview);
+      });
   }
   ngOnInit() {
         this.router.params.subscribe((params) => {
