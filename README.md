@@ -87,7 +87,7 @@ in cmd  when your inside a main folder: movies-database run: cd movies-client
 in cmd run : ng serve
 ```
 
-if you followe all step up to you, the app should run smoothly
+if you followed all steps, the app should run smoothly
 
 ## npm scripts
 We've captured many of the most useful commands in npm scripts defined in the package.json:
