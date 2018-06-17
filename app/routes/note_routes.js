@@ -38,31 +38,41 @@ module.exports = function (app, db) {
 		});
 	});
 	app.post('/movies', (req, res) => {
-		request('https://api.themoviedb.org/3/discover/movie?callback=JSONP_CALLBACK&sort_by=popularity.desc&api_key=2931998c3a80d7806199320f76d65298', function (error, response, body) {
-			console.log('error:', error); // Print the error if one occurred and handle it
-			console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
+		console.log(req.body);
+		request('https://api.themoviedb.org/3/search/movie?api_key=2931998c3a80d7806199320f76d65298&language=en-US&query=' + req.body + '&page=1&include_adult=false', function (error, response, body) {
+			console.log("###response from api", JSON.parse(response.body).results[0]);
+			const movieObj =  JSON.parse(response.body).results[0];
+			const {
+				errors,
+				isVal
+			} = validate(req.body);
+			if (isVal) {
+				const {
+					title
+				} = req.body;
+				console.log("$Title is", title);
+				db.collection('movies').insert({
+					movieObj
+				}, (error, result) => {
+					if (error) {
+						res.status(500).json({
+							errors: {
+								global: "Oops something is right!"
+							}
+						});
+					} else {
+						res.json({
+							show: movieObj
+						});
+					}
+				})
+			} else {
+				res.status(400).json({
+					errors
+				});
+			}
 		});
-		const {	errors,isVal } = validate(req.body);
-		if (isVal) {
-			const { title} = req.body;
-			db.collection('movies').insert({title}, (error, result) => {
-				if (error) {
-					res.status(500).json({
-						errors: {
-							global: "Oops something is right!"
-						}
-					});
-				} else {
-					res.json({
-						show: result.ops[0]
-					});
-				}
-			})
-		} else {
-			res.status(400).json({
-				errors
-			});
-		}
+
 	});
 	app.post('/comments', (req, res) => {
 		let url = 'https://api.themoviedb.org/3/movie/401478/reviews?api_key=4d9c9de3bdf0d3b6837c49c086e3b190';
