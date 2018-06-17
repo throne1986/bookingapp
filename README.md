@@ -180,7 +180,7 @@ Pass:  makumba404
 * [TypeScript](https://www.typescriptlang.org/) - Superset of JavaScript, ,
 
 
-Note : I choosed to use those frameworks and language due to my level of understand for bulding full stak app 
+Note : I choose to use those frameworks and language's due to my level of understanding  for building full stack app 
 
 ## Contributing
 
