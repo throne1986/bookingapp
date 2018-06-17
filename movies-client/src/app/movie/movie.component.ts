@@ -10,8 +10,10 @@ import {ActivatedRoute} from '@angular/router';
 })
 export class MovieComponent implements OnInit {
   movie: object;
+  review: {};
   constructor(private router: ActivatedRoute, private moviesService: MoviesService) {
     this.movie = [];
+    this.review = [];
   }
   ngOnInit() {
         this.router.params.subscribe((params) => {
@@ -20,9 +22,18 @@ export class MovieComponent implements OnInit {
           this.moviesService.getMovie(id)
            .then(movie => {
             this.movie = movie;
+          });
         });
+
+        this.router.params.subscribe((params) => {
+          // tslint:disable-next-line:prefer-const
+          let id = params['id'];
+          this.moviesService.getReview(id)
+           .then(review => {
+             console.log(review);
+            this.review = review;
+          });
         });
-       }
-  
       }
+ }
 

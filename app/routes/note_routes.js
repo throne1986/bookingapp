@@ -28,8 +28,10 @@ module.exports = function (app, db) {
 			res.send(body)
 		});
 	});
-	app.get('/comments', (req, res) => {
-		request('https://api.themoviedb.org/3/movie/401478/reviews?api_key=4d9c9de3bdf0d3b6837c49c086e3b190', function (error, response, body) {
+	
+	app.get('/comments/:id', (req, res) => {
+		const id = req.params.id;
+		request('https://api.themoviedb.org/3/movie/'+ id +'/reviews?api_key=4d9c9de3bdf0d3b6837c49c086e3b190', function (error, response, body) {
 			console.log('error:', error); // Print the error if one occurred and handle it
 			console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
 			res.send(body)

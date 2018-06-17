@@ -16,6 +16,17 @@
                 <br>
                 <a *ngIf="movie.homepage" href="{{movie.homepage}}" target="_blank" class="btn btn-default zero">Visit Movie Website</a>
             </div>
+            <div *ngFor="let review of review.results" class="col-md-7" >
+                    <ul class="list-group">
+                            <li class="list-group-item">Author: {{review.author}}</li>
+                            <li class="list-group-item">Comments: {{review.content}}</li>
+                            <li class="list-group-item">Comments Link: 
+                                    <a href="{{review.url}}">Visit comments link</a>
+                            </li>
+                    </ul>
+                    <br>
+                    
+            </div>
         </div>
       </div>
       </div>   
