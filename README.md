@@ -131,7 +131,7 @@ Shut it down manually with Ctrl-C.
 Explain how to run the automated tests for this system
 
 ```
-### And coding style tests
+## And coding style tests
 The project uses sass for styling
 
 ## Project Methodology
