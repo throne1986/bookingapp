@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Http, Headers, RequestOptions } from '@angular/http';
 import { Location } from '@angular/common';
+import { MoviesService } from '../movies.service';
 @Component({
     selector: 'app-create-movie',
     templateUrl: './create-movie.component.html',
@@ -8,20 +9,18 @@ import { Location } from '@angular/common';
 })
 export class CreateMovieComponent {
     movie: any;
-    constructor(private http: Http, private location: Location) {
-        this.movie = {
-            'title': ''
-        };
+    addmovie: any;
+    newMovie: any[];
+    constructor(private http: Http, private location: Location, private moviesService: MoviesService) {
+        this.addmovie = [];
+        this.newMovie = [];
     }
-    save() {
-        if (this.movie.title) {
-            const headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' });
-            const options = new RequestOptions({ 'headers': headers });
-            this.http.post('http://localhost:8000/movies', JSON.stringify(this.movie), options)
-                .subscribe(result => {
-                    //  this.location.back();
-                });
-
-        }
-    }
+    addMovie(addmovie: any): void {
+        if (!addmovie) { return; }
+        this.moviesService.createMovie(addmovie)
+          .then(movie => {
+           console.log(movie);
+           this.newMovie.push(movie.addmovie);
+          });
+      }
 }

@@ -4,11 +4,13 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Bought a Movie?</div>
                 <div class="panel-body">
-                    <div class="form-group">
-                        <label for="title">Title</label>
-                        <input type="text" class="form-control" id="title" placeholder="Title" [(ngModel)]="movie.title">
-                    </div>             
-                    <button class="btn btn-primary" style="cursor: pointer" (click)="save()">Save</button>
+                    <form (ngSubmit)="addMovie(addmovie)">
+                        <div class="form-group movie-username">
+                          <label for="title">Name:</label>
+                          <input type="text" class="form-control movie-title_text" id="movie-title" [(ngModel)]="addmovie.title" name="title">
+                        </div>           
+                    <button class="btn btn-primary" style="cursor: pointer">Save</button>
+                </form>
                 </div>
             </div>
         </div>
