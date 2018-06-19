@@ -10,6 +10,11 @@ app.use(cors());
 app.use(bodyParser.urlencoded({
     extended: true
 }))
+
+// define a simple route
+app.get('/', (req, res) => {
+    res.json({"message": "Welcome to Movies Database application"});
+});
 MongoClient.connect(db.url, (err, database) => {
     if (err) return console.log(err)
     require('./app/routes')(app, database);
