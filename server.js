@@ -5,7 +5,7 @@ const http = require('http');
 const db = require('./config/db');
 const app = express();
 var cors = require('cors')
-const port = 8000;
+var port = process.env.PORT || 8000;  
 app.use(cors());
 app.use(bodyParser.urlencoded({
     extended: true
