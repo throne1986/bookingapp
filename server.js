@@ -42,7 +42,7 @@ app.get('/', (req, res) => {
   res.send('Invalid Endpoint');
 });
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'movies-client/index.html'));
+  res.sendFile(path.join(__dirname, 'movies-client/src/index.html'));
 });
 // Start Server
 app.listen(port, () => {
