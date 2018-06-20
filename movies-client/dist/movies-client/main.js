@@ -30,7 +30,7 @@ webpackEmptyAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-inverse \">\n  <div class=\"container\">\n    <div class=\"navbar-header\">\n      <button type=\"button\" class=\"navbar-toggle collapsed\" data-toggle=\"collapse\" data-target=\"#navbar\" aria-expanded=\"false\"\n        aria-controls=\"navbar\">\n        <span class=\"sr-only\">Toggle navigation</span>\n        <span class=\"icon-bar\"></span>\n        <span class=\"icon-bar\"></span>\n        <span class=\"icon-bar\"></span>\n      </button>\n      <a class=\"navbar-brand\" href=\"#\">Movies Database</a>\n    </div>\n  </div>\n</nav>\n<div class=\"container\">\n  <router-outlet></router-outlet>\n  <hr>\n  <footer>\n    <p>&copy; 2018 Designed and created by Geofrey Zellah , Zellah's Inc .</p>\n  </footer>\n</div>\n<!-- /container -->\n"
+module.exports = "<nav class=\"navbar navbar-inverse navbar-fixed-top movie-navbar\">\n  <div class=\"container\">\n    <div class=\"navbar-header\">\n      <button type=\"button\" class=\"navbar-toggle collapsed\" data-toggle=\"collapse\" data-target=\"#navbar\" aria-expanded=\"false\"\n        aria-controls=\"navbar\">\n        <span class=\"sr-only\">Toggle navigation</span>\n        <span class=\"icon-bar\"></span>\n        <span class=\"icon-bar\"></span>\n        <span class=\"icon-bar\"></span>\n      </button>\n      <a class=\"navbar-brand movies-brand\" href=\"#\">Movies Database</a>\n    </div>\n  </div>\n</nav>\n\n<section class=\"main-header\" id=\"main\">\n  <div class=\"home-cont\">\n    <div class=\"container\">\n      <div class=\"row\">\n        <div class=\"main-header-sub text-center\">\n          <div class=\"col-md-12\">\n            <div class=\"content-text\">\n              <h1>Movies Database </h1>\n              <h3>Bootstrap 3 + Angular 6 Movies Database</h3>\n              <a href=\"#jumbotron\" class=\"btn btn-primary learn-more\">Explore Movies Database</a>\n              <div class=\"circle-1\"></div>\n              <div class=\"circle-2\"></div>\n              <div class=\"circle-3\"></div>\n              <div class=\"circle-4\"></div>\n            </div>\n          </div>\n        </div>\n      </div>\n      <div class=\"row\">\n        <div class=\"col-md-12\">\n          <div class=\"img-section\">\n            <img class=\"img-chat img-fluid\" src=\"/assets/mobile.png\" alt=\"\">\n            <img class=\"img-browser img-fluid\" src=\"/assets/laptop.png\" alt=\"\">\n            <img class=\"img-followers img-fluid\" src=\"/assets/mobile.png\" alt=\"\">\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n  <div class=\"round-header-circle hidden-sm hidden-xs\">\n    <div class=\"round-animate\">\n      <div class=\"round-1\">\n        <span class=\"r-1\"></span>\n        <span class=\"r-2\"></span>\n        <span class=\"r-3\"></span>\n        <span class=\"r-4\"></span>\n      </div>\n      <div class=\"round-2\">\n        <span class=\"r-1\"></span>\n        <span class=\"r-2\"></span>\n        <span class=\"r-3\"></span>\n        <span class=\"r-4\"></span>\n      </div>\n      <div class=\"round-3\">\n        <span class=\"r-1\"></span>\n        <span class=\"r-2\"></span>\n        <span class=\"r-3\"></span>\n        <span class=\"r-4\"></span>\n      </div>\n    </div>\n  </div>\n</section>\n<div class=\"container\">\n  <router-outlet></router-outlet>\n  <hr>\n  <footer>\n    <p>&copy; 2018 Designed and created by Geofrey Zellah , Zellah's Inc .</p>\n  </footer>\n</div>\n<!-- /container -->\n"
 
 /***/ }),
 
@@ -101,13 +101,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _movies_movies_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./movies/movies.component */ "./src/app/movies/movies.component.ts");
 /* harmony import */ var _movies_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./movies.service */ "./src/app/movies.service.ts");
 /* harmony import */ var _movie_movie_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./movie/movie.component */ "./src/app/movie/movie.component.ts");
-/* harmony import */ var _create_movie_create_movie_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./create-movie/create-movie.component */ "./src/app/create-movie/create-movie.component.ts");
+/* harmony import */ var angular2_flash_messages__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! angular2-flash-messages */ "./node_modules/angular2-flash-messages/module/index.js");
+/* harmony import */ var angular2_flash_messages__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(angular2_flash_messages__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var _create_movie_create_movie_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./create-movie/create-movie.component */ "./src/app/create-movie/create-movie.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
 
 
 
@@ -128,13 +132,15 @@ var AppModule = /** @class */ (function () {
                 _app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"],
                 _movies_movies_component__WEBPACK_IMPORTED_MODULE_7__["MoviesComponent"],
                 _movie_movie_component__WEBPACK_IMPORTED_MODULE_9__["MovieComponent"],
-                _create_movie_create_movie_component__WEBPACK_IMPORTED_MODULE_10__["CreateMovieComponent"]
+                _create_movie_create_movie_component__WEBPACK_IMPORTED_MODULE_11__["CreateMovieComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
                 _angular_http__WEBPACK_IMPORTED_MODULE_3__["HttpModule"],
                 _angular_http__WEBPACK_IMPORTED_MODULE_3__["JsonpModule"],
+                _angular_forms__WEBPACK_IMPORTED_MODULE_2__["ReactiveFormsModule"],
                 _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormsModule"],
+                angular2_flash_messages__WEBPACK_IMPORTED_MODULE_10__["FlashMessagesModule"],
                 _angular_common_http__WEBPACK_IMPORTED_MODULE_6__["HttpClientModule"],
                 _angular_router__WEBPACK_IMPORTED_MODULE_4__["RouterModule"].forRoot([
                     { path: '', component: _movies_movies_component__WEBPACK_IMPORTED_MODULE_7__["MoviesComponent"] },
@@ -242,7 +248,7 @@ var CreateMovieComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div *ngIf=\"movie\">\r\n  <div class=\"panel panel-default\">\r\n    <div class=\"panel-heading\">\r\n      <h3 class=\"panel-title\">{{movie.title}} </h3>\r\n    </div>\r\n    <div class=\"panel-body\">\r\n      <div class=\"row\">\r\n        <div class=\"col-md-5\">\r\n          <img class=\"thumbnail\" src=\"http://image.tmdb.org/t/p/w500/{{movie.poster_path}}\">\r\n        </div>\r\n        <div class=\"col-md-7\">\r\n          <ul class=\"list-group\">\r\n            <li class=\"list-group-item\">Genres:\r\n              <span *ngFor=\"let genre of movie.genres\">{{genre.name}}, </span>\r\n            </li>\r\n            <li class=\"list-group-item\">Release Date: {{movie.release_date}}</li>\r\n          </ul>\r\n          <br>\r\n          <a *ngIf=\"movie.homepage\" href=\"{{movie.homepage}}\" target=\"_blank\" class=\"btn btn-default zero\">Visit Movie Website</a>\r\n        </div>\r\n        <div *ngFor=\"let review of review.results\" class=\"col-md-7\">\r\n          <ul class=\"list-group\">\r\n            <li class=\"list-group-item\">Author: {{review.author}}</li>\r\n            <li class=\"list-group-item\">Comments: {{review.content}}</li>\r\n            <li class=\"list-group-item\">Comments Link:\r\n              <a href=\"{{review.url}}\">Visit comments link</a>\r\n            </li>\r\n          </ul>\r\n          <br>\r\n        </div>\r\n        <div class=\"col-md-7\">\r\n          <form (ngSubmit)=\"addReview(addreview)\">\r\n            <div class=\"form-group movie-username\">\r\n              <label for=\"author\">Name:</label>\r\n              <input type=\"text\" class=\"form-control movie-username_text\" id=\"usr\" [(ngModel)]=\"addreview.author\" name=\"author\" #author>\r\n            </div>\r\n            <div class=\"form-group movie-textarea\">\r\n              <label for=\"movie-textarea_label description\">Do you like the movie? leave us a comment below</label>\r\n              <textarea class=\"form-control rounded-0\" \r\n              id=\"movie-textarea_textarea\" #description=\"ngModel\" rows=\"10\"\r\n              [(ngModel)]=\"addreview.description\" \r\n              name=\"description\"></textarea>\r\n            </div>\r\n            <button type=\"submit\" class=\"btn btn-primary\">Submit</button>\r\n          </form>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n"
+module.exports = "<div *ngIf=\"movie\">\r\n  <div class=\"panel panel-default\">\r\n    <div class=\"panel-heading\">\r\n      <h3 class=\"panel-title\">{{movie.title}} </h3>\r\n    </div>\r\n    <div class=\"panel-body\">\r\n      <div class=\"row\">\r\n        <div class=\"col-md-5\">\r\n          <img class=\"thumbnail\" src=\"http://image.tmdb.org/t/p/w500/{{movie.poster_path}}\">\r\n        </div>\r\n        <div class=\"col-md-7\">\r\n          <ul class=\"list-group\">\r\n            <li class=\"list-group-item\">Genres:\r\n              <span *ngFor=\"let genre of movie.genres\">{{genre.name}}, </span>\r\n            </li>\r\n            <li class=\"list-group-item\">Release Date: {{movie.release_date}}</li>\r\n          </ul>\r\n          <br>\r\n          <a *ngIf=\"movie.homepage\" href=\"{{movie.homepage}}\" target=\"_blank\" class=\"btn btn-default zero\">Visit Movie Website</a>\r\n        </div>\r\n        <div *ngFor=\"let review of review.results\" class=\"col-md-7\">\r\n          <ul class=\"list-group\">\r\n            <li class=\"list-group-item\">Author: {{review.author}}</li>\r\n            <li class=\"list-group-item\">Comments: {{review.content}}</li>\r\n            <li class=\"list-group-item\">Comments Link:\r\n              <a href=\"{{review.url}}\">Visit comments link</a>\r\n            </li>\r\n          </ul>\r\n          <br>\r\n        </div>\r\n        <div *ngFor=\"let comment of comments\" class=\"col-md-7\">\r\n          <ul class=\"list-group\">\r\n            <li class=\"list-group-item\">Author: {{comment.author}}</li>\r\n            <li class=\"list-group-item\">Comments: {{comment.description}}</li>\r\n\r\n          </ul>\r\n          <br>\r\n        </div>\r\n        <div class=\"col-md-7\">\r\n          <form [formGroup]=\"angForm\" novalidate>\r\n            <div class=\"form-group\">\r\n              <label class=\"col-md-4\">Comment author</label>\r\n              <input type=\"text\" class=\"form-control\" name=\"author\" formControlName=\"author\" #author />\r\n            </div>\r\n            <div *ngIf=\"angForm.controls['author'].invalid && (angForm.controls['author'].dirty || angForm.controls['author'].touched)\"\r\n              class=\"alert alert-danger\">\r\n              <div *ngIf=\"angForm.controls['author'].errors.required\">\r\n                Name is required.\r\n              </div>\r\n            </div>\r\n            <div class=\"form-group\">\r\n              <label class=\"col-md-4\">comment description</label>\r\n              <input type=\"text\" class=\"form-control\" formControlName=\"description\" #description/>\r\n            </div>\r\n            <div *ngIf=\"angForm.controls['description'].invalid && (angForm.controls['description'].dirty || angForm.controls['description'].touched)\"\r\n              class=\"alert alert-danger\">\r\n              <div *ngIf=\"angForm.controls['description'].errors.required\">\r\n                description is required.\r\n              </div>\r\n            </div>\r\n            <div class=\"form-group\">\r\n              <button (click)=\"addReview(author.value, description.value)\" [disabled]=\"angForm.pristine || angForm.invalid\" class=\"btn btn-primary\">Add</button>\r\n            </div>\r\n          </form>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -269,7 +275,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MovieComponent", function() { return MovieComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _movies_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../movies.service */ "./src/app/movies.service.ts");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -282,29 +290,34 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
+
+
 var MovieComponent = /** @class */ (function () {
-    function MovieComponent(router, moviesService) {
-        this.router = router;
+    // tslint:disable-next-line:max-line-length
+    function MovieComponent(fb, route, http, activeRouter, moviesService) {
+        this.fb = fb;
+        this.route = route;
+        this.http = http;
+        this.activeRouter = activeRouter;
         this.moviesService = moviesService;
         this.movie = [];
         this.review = [];
-        this.addreview = [];
         this.addreviews = [];
+        this.createForm();
     }
-    MovieComponent.prototype.addReview = function (addreview) {
-        var _this = this;
-        if (!addreview) {
-            return;
-        }
-        this.moviesService.createReview(addreview)
-            .then(function (reviews) {
-            console.log(reviews);
-            _this.addreviews.push(reviews.addreview);
+    MovieComponent.prototype.createForm = function () {
+        this.angForm = this.fb.group({
+            author: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
+            description: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]
         });
+    };
+    MovieComponent.prototype.addReview = function (author, description) {
+        this.moviesService.addReview(author, description);
     };
     MovieComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.router.params.subscribe(function (params) {
+        this.activeRouter.params.subscribe(function (params) {
             // tslint:disable-next-line:prefer-const
             var id = params['id'];
             _this.moviesService.getMovie(id)
@@ -312,7 +325,7 @@ var MovieComponent = /** @class */ (function () {
                 _this.movie = movie;
             });
         });
-        this.router.params.subscribe(function (params) {
+        this.activeRouter.params.subscribe(function (params) {
             // tslint:disable-next-line:prefer-const
             var id = params['id'];
             _this.moviesService.getReview(id)
@@ -328,7 +341,7 @@ var MovieComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./movie.component.html */ "./src/app/movie/movie.component.html"),
             styles: [__webpack_require__(/*! ./movie.component.scss */ "./src/app/movie/movie.component.scss")]
         }),
-        __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"], _movies_service__WEBPACK_IMPORTED_MODULE_1__["MoviesService"]])
+        __metadata("design:paramtypes", [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"], _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClient"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"], _movies_service__WEBPACK_IMPORTED_MODULE_1__["MoviesService"]])
     ], MovieComponent);
     return MovieComponent;
 }());
@@ -369,7 +382,7 @@ var MoviesService = /** @class */ (function () {
         this.theatreUrl = '/theatre/';
         this.movieUrl = '/movies/';
         this.reviewUrl = '/comments/';
-        this.apiUrl = '';
+        this.apiUrl = 'movies';
     }
     MoviesService.prototype.getMovies = function (id) {
         return this.http.get(this.apiUrl + '/movies')
@@ -382,6 +395,19 @@ var MoviesService = /** @class */ (function () {
             .toPromise()
             .then(this.handleData)
             .catch(this.handleError);
+    };
+    MoviesService.prototype.addReview = function (author, description) {
+        var uri = 'movies/comments/';
+        var obj = {
+            author: author,
+            description: description
+        };
+        this
+            .http
+            .post(uri, obj)
+            .subscribe(function (res) {
+            return console.log('Done');
+        });
     };
     MoviesService.prototype.getReview = function (id) {
         return this.http.get(this.apiUrl + this.movieUrl + id)
@@ -397,12 +423,6 @@ var MoviesService = /** @class */ (function () {
     };
     MoviesService.prototype.getInTheaters = function () {
         return this.http.get(this.apiUrl + this.theatreUrl)
-            .toPromise()
-            .then(this.handleData)
-            .catch(this.handleError);
-    };
-    MoviesService.prototype.createReview = function (review) {
-        return this.http.post(this.apiUrl + this.reviewUrl, review)
             .toPromise()
             .then(this.handleData)
             .catch(this.handleError);
@@ -442,7 +462,7 @@ var MoviesService = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"jumbotron jumbotron--box\">\n  <div class=\"container jumbotron--container\">\n      <app-create-movie></app-create-movie>\n    <h1>Find A Movie</h1>\n    <p>Search for a movie using the form below</p>\n    <form (submit)=\"searchMovies()\">\n      <input type=\"text\" class=\"form-control jumbotron--container_form-input\" [(ngModel)]=\"searchStr\" name=\"searchStr\">\n      <br>\n      <button class=\"btn  btn-warning btn-lg btn-block jumbotron--container_button\">Search your Favourite Movies</button>  \n    </form>\n  </div>\n</div>\n\n\n<div *ngIf=\"searchRes\" class=\"panel panel-default search-panel\">\n    <div class=\"panel-heading search-panel_heading\">\n      <h3 class=\"panel-title search-panel_title\">Search Results</h3>\n    </div>\n    <div class=\"panel-body\">\n      <div class=\"row movie-searched\">\n          <div *ngFor=\"let movie of searchRes;let i=index\" class=\"col-md-2\">\n              <div *ngIf=\"i < 6\">\n              <img *ngIf=\"movie.poster_path\" class=\"thumbnail movie-searched_img\" src=\"http://image.tmdb.org/t/p/w500/{{movie.poster_path}}\">\n              <h4>{{movie.title}}</h4>\n              <p>{{movie.release_date}}</p>\n              <p><a class=\"btn btn-default\" routerLink=\"/movie{{movie.id}}\" role=\"button\">View details &raquo;</a></p>\n              </div>\n          </div>\n      </div>\n    </div>\n  </div>\n\n<div class=\"panel panel-default\">\n<div class=\"panel-heading\">\n<h3 class=\"panel-title\">Popular Movies</h3>\n</div>\n<div class=\"panel-body\">\n<div class=\"row\">\n    <div *ngFor=\"let movie of movies; let i=index\" class=\"col-md-2\">\n        <div *ngIf=\"i < 6\">\n        <img *ngIf=\"movie.poster_path\" class=\"thumbnail\" src=\"http://image.tmdb.org/t/p/w500/{{movie.poster_path}}\">\n        <h4>{{movie.title}}</h4>\n        <p>{{movie.release_date}}</p>\n\n        <p><a class=\"btn btn-default\" routerLink=\"/movie/{{movie.id}}\">View details &raquo;</a></p>\n      </div>\n    </div>\n</div>\n</div>\n</div>\n\n<div class=\"panel panel-default\">\n    <div class=\"panel-heading\">\n        <h3 class=\"panel-title\">In Theaters</h3>\n    </div>\n<div class=\"panel-body\">\n<div class=\"row\">\n    <div *ngFor=\"let movie of theatersList;let i=index\" class=\"col-md-2\">\n            <div *ngIf=\"i < 6\">\n                <img *ngIf=\"movie.poster_path\" class=\"thumbnail\" src=\"http://image.tmdb.org/t/p/w500/{{movie.poster_path}}\">\n                <h4>{{movie.title}}</h4>\n                <p>{{movie.release_date}}</p>\n                <p><a class=\"btn btn-default\" routerLink=\"/movie/{{movie.id}}\" role=\"button\">View details &raquo;</a></p>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>\n\n<div class=\"panel panel-default movies-table-panel\">\n                <div class=\"panel-heading movies-table-panel_heading\">Movies</div>\n                <table class=\"table table-striped movies-table-panel_striped\" >\n                    <thead>\n                        <tr>\n                            <th>Title</th>\n                            <th>Release Date</th>\n                            <th>Votes Count</th>\n                            <th>Popularity</th>\n                        </tr>\n                    </thead>\n                    <tbody>\n                        <tr *ngFor=\"let movie of movies\">\n                            <td>{{ movie.title }}</td>\n                            <td>{{ movie.release_date}}</td>\n                            <td>{{ movie.vote_count }}</td>\n                            <td>{{ movie.popularity }}</td>\n                           \n                        </tr>\n                    </tbody>\n                </table>\n            </div>\n\n\n            \n        \n  "
+module.exports = "<div class=\"jumbotron jumbotron--box\" id=\"jumbotron\">\n  <div class=\"container jumbotron--container\">\n      <app-create-movie></app-create-movie>\n    <h1>Find A Movie</h1>\n    <p>Search for a movie using the form below</p>\n    <form (submit)=\"searchMovies()\">\n      <input type=\"text\" class=\"form-control jumbotron--container_form-input\" [(ngModel)]=\"searchStr\" name=\"searchStr\">\n      <br>\n      <button class=\"btn  btn-warning btn-lg btn-block jumbotron--container_button\">Search your Favourite Movies</button>  \n    </form>\n  </div>\n</div>\n\n\n<div *ngIf=\"searchRes\" class=\"panel panel-default search-panel\">\n    <div class=\"panel-heading search-panel_heading\">\n      <h3 class=\"panel-title search-panel_title\">Search Results</h3>\n    </div>\n    <div class=\"panel-body\">\n      <div class=\"row movie-searched\">\n          <div *ngFor=\"let movie of searchRes;let i=index\" class=\"col-md-2\">\n              <div *ngIf=\"i < 6\">\n              <img *ngIf=\"movie.poster_path\" class=\"thumbnail movie-searched_img\" src=\"http://image.tmdb.org/t/p/w500/{{movie.poster_path}}\">\n              <h4>{{movie.title}}</h4>\n              <p>{{movie.release_date}}</p>\n              <p><a class=\"btn btn-default\" routerLink=\"/movie/{{movie.id}}\" role=\"button\">View details &raquo;</a></p>\n              </div>\n          </div>\n      </div>\n    </div>\n  </div>\n\n<div class=\"panel panel-default\">\n<div class=\"panel-heading\">\n<h3 class=\"panel-title\">Popular Movies</h3>\n</div>\n<div class=\"panel-body\">\n<div class=\"row\">\n    <div *ngFor=\"let movie of movies; let i=index\" class=\"col-md-2\">\n        <div *ngIf=\"i < 6\">\n        <img *ngIf=\"movie.poster_path\" class=\"thumbnail\" src=\"http://image.tmdb.org/t/p/w500/{{movie.poster_path}}\">\n        <h4>{{movie.title}}</h4>\n        <p>{{movie.release_date}}</p>\n\n        <p><a class=\"btn btn-default\" routerLink=\"/movie/{{movie.id}}\">View details &raquo;</a></p>\n      </div>\n    </div>\n</div>\n</div>\n</div>\n\n<div class=\"panel panel-default\">\n    <div class=\"panel-heading\">\n        <h3 class=\"panel-title\">In Theaters</h3>\n    </div>\n<div class=\"panel-body\">\n<div class=\"row\">\n    <div *ngFor=\"let movie of theatersList;let i=index\" class=\"col-md-2\">\n            <div *ngIf=\"i < 6\">\n                <img *ngIf=\"movie.poster_path\" class=\"thumbnail\" src=\"http://image.tmdb.org/t/p/w500/{{movie.poster_path}}\">\n                <h4>{{movie.title}}</h4>\n                <p>{{movie.release_date}}</p>\n                <p><a class=\"btn btn-default\" routerLink=\"/movie/{{movie.id}}\" role=\"button\">View details &raquo;</a></p>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>\n\n<div class=\"panel panel-default movies-table-panel\">\n                <div class=\"panel-heading movies-table-panel_heading\">Movies</div>\n                <table class=\"table table-striped movies-table-panel_striped\" >\n                    <thead>\n                        <tr>\n                            <th>Title</th>\n                            <th>Release Date</th>\n                            <th>Votes Count</th>\n                            <th>Popularity</th>\n                        </tr>\n                    </thead>\n                    <tbody>\n                        <tr *ngFor=\"let movie of movies\">\n                            <td>{{ movie.title }}</td>\n                            <td>{{ movie.release_date}}</td>\n                            <td>{{ movie.vote_count }}</td>\n                            <td>{{ movie.popularity }}</td>\n                           \n                        </tr>\n                    </tbody>\n                </table>\n            </div>\n\n\n            \n        \n  "
 
 /***/ }),
 
