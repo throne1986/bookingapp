@@ -36,7 +36,7 @@ app.use(bodyParser.json());
 
 app.use('/movies', movies);
 
-app.get('/*', (req, res) => {
+app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname + '/movies-client/dist/movies-client/index.html'));
 });
 
