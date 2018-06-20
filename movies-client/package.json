@@ -1,13 +1,14 @@
 {
   "name": "movies-client",
   "version": "0.0.0",
+  "main": "server.js",
   "scripts": {
     "ng": "ng",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "postinstall": "ng build --prod",
+    "postinstall": "grunt sass:production && ng build --aot --prod",
     "start": "node server.js"
 
   },
