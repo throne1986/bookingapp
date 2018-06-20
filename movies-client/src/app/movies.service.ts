@@ -11,16 +11,16 @@ export class MoviesService {
   theatreUrl = '/theatre/';
   movieUrl = '/movies/';
   reviewUrl = '/comments/';
-  private apiUrl = '';
+  // private apiUrl = '/movies';
   constructor(private http: Http, private _jsonp: Jsonp) { }
   getMovies(id: string): Promise<any> {
-    return this.http.get(this.apiUrl + '/movies')
+    return this.http.get('movies/movies')
       .toPromise()
       .then(this.handleData)
       .catch(this.handleError);
   }
   getMovie(id: string): Promise<any> {
-    return this.http.get(this.apiUrl + this.movieUrl + id)
+    return this.http.get('movies/movies' + id)
       .toPromise()
       .then(this.handleData)
       .catch(this.handleError);
@@ -38,7 +38,7 @@ export class MoviesService {
           console.log('Done'));
   }
   getReview(id: string): Promise<any> {
-    return this.http.get(this.apiUrl + this.movieUrl + id)
+    return this.http.get('movies/movies' + id)
       .toPromise()
       .then(this.handleData)
       .catch(this.handleError);
@@ -50,13 +50,13 @@ export class MoviesService {
       .catch(this.handleError);
   }
   getInTheaters(): Promise<any> {
-    return this.http.get(this.apiUrl + this.theatreUrl)
+    return this.http.get('movies' + this.theatreUrl)
       .toPromise()
       .then(this.handleData)
       .catch(this.handleError);
   }
   createMovie(movie: string): Promise<any> {
-    return this.http.post(this.apiUrl + this.movieUrl, movie)
+    return this.http.post('movies/movies', movie)
       .toPromise()
       .then(this.handleData)
       .catch(this.handleError);
