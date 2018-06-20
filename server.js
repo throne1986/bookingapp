@@ -24,7 +24,9 @@ const app = express();
 const movies = require('./app/routes/movies');
 
 // Port Number
-const port = 8000;
+http.listen(process.env.PORT || 8000, function(){
+  console.log('listening on', http.address().port);
+});
 
 // CORS Middleware
 app.use(cors());
