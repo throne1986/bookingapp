@@ -26,7 +26,7 @@ export class MoviesService {
       .catch(this.handleError);
   }
   addReview(author, description) {
-    const uri = 'movies/comments/';
+    const uri = 'movies/comments';
     const obj = {
       author: author,
       description: description
@@ -44,13 +44,13 @@ export class MoviesService {
       .catch(this.handleError);
   }
   searchMovies(searchStr: string): Promise<any> {
-    return this.http.get(this.apiUrl + this.queryUrl + searchStr)
+    return this.http.get('movies/search' + this.queryUrl + searchStr)
       .toPromise()
       .then(this.handleData)
       .catch(this.handleError);
   }
   getInTheaters(): Promise<any> {
-    return this.http.get('movies' + this.theatreUrl)
+    return this.http.get('movies/theatre')
       .toPromise()
       .then(this.handleData)
       .catch(this.handleError);
