@@ -11,7 +11,7 @@ export class MoviesService {
   theatreUrl = '/theatre/';
   movieUrl = '/movies/';
   reviewUrl = '/comments/';
-  private apiUrl = 'movies';
+  private apiUrl = '';
   constructor(private http: Http, private _jsonp: Jsonp) { }
   getMovies(id: string): Promise<any> {
     return this.http.get(this.apiUrl + '/movies')
