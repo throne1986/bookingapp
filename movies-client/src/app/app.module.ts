@@ -9,6 +9,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { MoviesComponent } from './movies/movies.component';
 import { MoviesService } from './movies.service';
 import { MovieComponent } from './movie/movie.component';
+import { FlashMessagesModule } from 'angular2-flash-messages';
+import { ReactiveFormsModule } from '@angular/forms';
 import { CreateMovieComponent } from './create-movie/create-movie.component';
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { CreateMovieComponent } from './create-movie/create-movie.component';
     BrowserModule,
     HttpModule,
     JsonpModule,
+    ReactiveFormsModule ,
     FormsModule,
+    FlashMessagesModule,
     HttpClientModule,
     RouterModule.forRoot([
       {path: '', component: MoviesComponent},

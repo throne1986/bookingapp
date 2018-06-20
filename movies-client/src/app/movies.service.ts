@@ -11,7 +11,7 @@ export class MoviesService {
   theatreUrl = '/theatre/';
   movieUrl = '/movies/';
   reviewUrl = '/comments/';
-  private apiUrl = '';
+  private apiUrl = 'http://localhost:8000/movies';
   constructor(private http: Http, private _jsonp: Jsonp) { }
   getMovies(id: string): Promise<any> {
     return this.http.get(this.apiUrl + '/movies')
@@ -24,6 +24,18 @@ export class MoviesService {
       .toPromise()
       .then(this.handleData)
       .catch(this.handleError);
+  }
+  addReview(author, description) {
+    const uri = 'http://localhost:8000/movies/comments/';
+    const obj = {
+      author: author,
+      description: description
+    };
+    this
+      .http
+      .post(uri, obj)
+      .subscribe(res =>
+          console.log('Done'));
   }
   getReview(id: string): Promise<any> {
     return this.http.get(this.apiUrl + this.movieUrl + id)
@@ -43,19 +55,12 @@ export class MoviesService {
       .then(this.handleData)
       .catch(this.handleError);
   }
-  createReview(review: string): Promise<any> {
-    return this.http.post(this.apiUrl + this.reviewUrl, review)
-      .toPromise()
-      .then(this.handleData)
-      .catch(this.handleError);
-  }
   createMovie(movie: string): Promise<any> {
     return this.http.post(this.apiUrl + this.movieUrl, movie)
       .toPromise()
       .then(this.handleData)
       .catch(this.handleError);
   }
-
   private handleData(res: any) {
     const body = res.json();
     console.log(body); // for development purposes only

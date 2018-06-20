@@ -1,4 +1,4 @@
-<div class="jumbotron jumbotron--box">
+<div class="jumbotron jumbotron--box" id="jumbotron">
   <div class="container jumbotron--container">
       <app-create-movie></app-create-movie>
     <h1>Find A Movie</h1>
@@ -23,7 +23,7 @@
               <img *ngIf="movie.poster_path" class="thumbnail movie-searched_img" src="http://image.tmdb.org/t/p/w500/{{movie.poster_path}}">
               <h4>{{movie.title}}</h4>
               <p>{{movie.release_date}}</p>
-              <p><a class="btn btn-default" routerLink="/movie{{movie.id}}" role="button">View details &raquo;</a></p>
+              <p><a class="btn btn-default" routerLink="/movie/{{movie.id}}" role="button">View details &raquo;</a></p>
               </div>
           </div>
       </div>
