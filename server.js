@@ -30,7 +30,7 @@ const port = process.env.PORT || 8000
 app.use(cors());
 
 // Set Static Folder
-app.use(express.static(path.join(__dirname, 'movies-client')));
+app.use(express.static(path.join(__dirname, '/dist')));
 
 // Body Parser Middleware
 app.use(bodyParser.json());
@@ -38,7 +38,7 @@ app.use(bodyParser.json());
 app.use('/movies', movies);
 
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname + '/movies-client/src/index.html'));
+  res.sendFile(path.join(__dirname + '/dist/index.html'));
 });
 // Start Server
 app.listen(port, () => {
