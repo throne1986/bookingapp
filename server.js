@@ -38,7 +38,7 @@ app.use(bodyParser.json());
 app.use('/movies', movies);
 
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname + 'movies-client/dist/index.html'));
+  res.sendFile(path.join(__dirname + '/movies-client/dist/index.html'));
 });
 // Start Server
 app.listen(port, () => {
