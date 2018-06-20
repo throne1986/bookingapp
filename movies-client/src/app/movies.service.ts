@@ -26,7 +26,7 @@ export class MoviesService {
       .catch(this.handleError);
   }
   addReview(author, description) {
-    const uri = 'http://localhost:8000/movies/comments/';
+    const uri = 'movies/comments/';
     const obj = {
       author: author,
       description: description
