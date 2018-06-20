@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const mongoose = require('mongoose');
 const db = require('./app/config/database');
-const http = require('http');
+
 // Connect To Database
 mongoose.connect(db.database);
 
@@ -24,9 +24,7 @@ const app = express();
 const movies = require('./app/routes/movies');
 
 // Port Number
-http.listen(process.env.PORT || 8000, function(){
-  console.log('listening on', http.address().port);
-});
+const port = process.env.PORT || 8000
 
 // CORS Middleware
 app.use(cors());
