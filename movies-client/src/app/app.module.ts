@@ -25,8 +25,8 @@ import { CreateMovieComponent } from './create-movie/create-movie.component';
     JsonpModule,
     ReactiveFormsModule ,
     FormsModule,
-    FlashMessagesModule,
     HttpClientModule,
+    FlashMessagesModule.forRoot(),
     RouterModule.forRoot([
       {path: '', component: MoviesComponent},
       {path: 'movie/:id', component: MovieComponent}

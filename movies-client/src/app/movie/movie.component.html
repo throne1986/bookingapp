@@ -18,6 +18,7 @@
           <br>
           <a *ngIf="movie.homepage" href="{{movie.homepage}}" target="_blank" class="btn btn-default zero">Visit Movie Website</a>
         </div>
+        <br>
         <div *ngFor="let review of review.results" class="col-md-7">
           <ul class="list-group">
             <li class="list-group-item">Author: {{review.author}}</li>
@@ -32,14 +33,14 @@
           <ul class="list-group">
             <li class="list-group-item">Author: {{comment.author}}</li>
             <li class="list-group-item">Comments: {{comment.description}}</li>
-
           </ul>
           <br>
         </div>
-        <div class="col-md-7">
+        <div class="col-md-7 movie-form" >
+          <flash-messages></flash-messages>
           <form [formGroup]="angForm" novalidate>
             <div class="form-group">
-              <label class="col-md-4">Comment author</label>
+              <label class="col-md-4">Author</label>
               <input type="text" class="form-control" name="author" formControlName="author" #author />
             </div>
             <div *ngIf="angForm.controls['author'].invalid && (angForm.controls['author'].dirty || angForm.controls['author'].touched)"
@@ -49,8 +50,9 @@
               </div>
             </div>
             <div class="form-group">
-              <label class="col-md-4">comment description</label>
-              <input type="text" class="form-control" formControlName="description" #description/>
+              <label class="col-md-4">Description</label>
+              <textarea cols="10" rows="10" type="text" class="form-control" formControlName="description" #description>
+                </textarea>
             </div>
             <div *ngIf="angForm.controls['description'].invalid && (angForm.controls['description'].dirty || angForm.controls['description'].touched)"
               class="alert alert-danger">

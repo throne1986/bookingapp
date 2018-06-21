@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Headers, Http, Response } from '@angular/http';
 import { Jsonp } from '@angular/http';
-
 @Injectable({
   providedIn: 'root'
 })
@@ -11,6 +10,7 @@ export class MoviesService {
   theatreUrl = '/theatre/';
   movieUrl = '/movies/';
   reviewUrl = '/comments/';
+  comments = '/movies/comments';
   private apiUrl = 'movies';
   constructor(private http: Http, private _jsonp: Jsonp) { }
   getMovies(id: string): Promise<any> {
@@ -28,15 +28,12 @@ export class MoviesService {
   addReview(author, description) {
     const uri = 'movies/comments/';
     const obj = {
-      author: author,
-      description: description
+        author: author,
+        description: description
     };
-    this
-      .http
-      .post(uri, obj)
-      .subscribe(res =>
-          console.log('Done'));
-  }
+    return this.http.post(uri, obj);
+}
+
   getReview(id: string): Promise<any> {
     return this.http.get(this.apiUrl + this.movieUrl + id)
       .toPromise()
