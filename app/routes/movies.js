@@ -34,7 +34,7 @@ router.get('/movies/:id', (req, res) => {
 });
 
 //get all movie comments by id
-router.get('/comments/:id', (req, res) => {
+router.get('/review/:id', (req, res) => {
   const id = req.params.id;
   request('https://api.themoviedb.org/3/movie/' + id + '/reviews?api_key=4d9c9de3bdf0d3b6837c49c086e3b190', function (error, response, body) {
     console.log('error:', error); // Print the error if one occurred and handle it
