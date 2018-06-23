@@ -10,7 +10,7 @@ export class MoviesService {
   theatreUrl = '/theatre/';
   movieUrl = '/movies/';
   reviewUrl = '/review/';
-  comments = '/movies/comments';
+  commentsUrl = '/comment/';
   private apiUrl = 'http://localhost:8000/movies';
   constructor(private http: Http, private _jsonp: Jsonp) { }
   getMovies(id: string): Promise<any> {
@@ -26,16 +26,21 @@ export class MoviesService {
       .catch(this.handleError);
   }
   addReview(author, description) {
-    const uri = 'movies/comments/';
+    const uri = 'http://localhost:8000/movies/comments';
     const obj = {
       author: author,
       description: description
     };
     return this.http.post(uri, obj);
   }
-
   getReview(id: string): Promise<any> {
     return this.http.get(this.apiUrl + this.reviewUrl + id)
+      .toPromise()
+      .then(this.handleData)
+      .catch(this.handleError);
+  }
+  getComments(id: string): Promise<any> {
+    return this.http.get(this.apiUrl + this.commentsUrl + id)
       .toPromise()
       .then(this.handleData)
       .catch(this.handleError);

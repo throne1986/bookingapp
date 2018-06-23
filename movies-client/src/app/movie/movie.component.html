@@ -29,6 +29,13 @@
           </ul>
           <br>
         </div>
+        <div *ngFor="let comment of comments" class="col-md-7">
+          <ul class="list-group">
+            <li class="list-group-item">Author: {{comment.author}}</li>
+            <li class="list-group-item">Comments: {{comment.description}}</li>
+          </ul>
+          <br>
+        </div>
         <div class="col-md-7 movie-form" >
           <flash-messages></flash-messages>
           <form [formGroup]="angForm" novalidate>

@@ -14,7 +14,7 @@ import { FlashMessagesModule, FlashMessagesService } from 'angular2-flash-messag
 export class MovieComponent implements OnInit {
   movie: object;
   review: {};
-  comments: any;
+  comments: {};
   addreview: {};
   addreviews: any[];
   angForm: FormGroup;
@@ -32,6 +32,7 @@ export class MovieComponent implements OnInit {
     this.comments = [];
     this.createForm();
   }
+
   createForm() {
     this.angForm = this.fb.group({
       author: ['', Validators.required],
@@ -61,6 +62,16 @@ export class MovieComponent implements OnInit {
         .then(review => {
           console.log(review);
           this.review = review;
+        });
+    });
+
+    this.activeRouter.params.subscribe((params) => {
+      // tslint:disable-next-line:prefer-const
+      let id = params['id'];
+      this.moviesService.getComments(id)
+        .then(comments => {
+          console.log(comments);
+          this.comments = comments;
         });
     });
   }

@@ -23,6 +23,17 @@ router.get('/movies', (req, res, next) => {
     res.send(body)
   });
 });
+//get comments
+router.get('/comment/:id', (req, res) => {
+	Comments.find(function (err, comments){
+	 if(err){
+		 console.log(err);
+	 }
+	 else {
+		 res.json(comments);
+	 }
+ });
+});
 // get movie by id
 router.get('/movies/:id', (req, res) => {
   const id = req.params.id;
@@ -32,7 +43,6 @@ router.get('/movies/:id', (req, res) => {
     res.send(body)
   });
 });
-
 //get all movie comments by id
 router.get('/review/:id', (req, res) => {
   const id = req.params.id;
