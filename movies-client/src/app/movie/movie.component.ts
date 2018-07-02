@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MoviesService } from '../movies.service';
+import { Comments } from '../../../../app/models/comments';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
@@ -15,6 +16,7 @@ export class MovieComponent implements OnInit {
   movie: object;
   review: {};
   comments: {};
+  addcomments: Comment[];
   addreview: {};
   addreviews: any[];
   angForm: FormGroup;
@@ -28,8 +30,8 @@ export class MovieComponent implements OnInit {
     private moviesService: MoviesService) {
     this.movie = [];
     this.review = [];
-    this.addreviews = [];
     this.comments = [];
+    this.addreviews = [];
     this.createForm();
   }
 
@@ -41,17 +43,27 @@ export class MovieComponent implements OnInit {
   }
   addReview(author, description) {
     this.moviesService.addReview(author, description).subscribe(success => {
-      this.flashMessages.show('You are data we succesfully submitted', { cssClass: 'alert-success', timeout: 3000 });
+        this.flashMessages.show('You are data we succesfully submitted', { cssClass: 'alert-success', timeout: 3000 });
+        // get the id
+        this.activeRouter.params.subscribe((params) => {
+          // tslint:disable-next-line:prefer-const
+          let id = params['id'];
+          this.moviesService.getComments(id)
+            .subscribe(comments => {
+              console.log(comments);
+              this.comments = comments;
+            });
+        });
     }, error => {
-      this.flashMessages.show('Something went wrong', { cssClass: 'alert-danger', timeout: 3000 });
+        this.flashMessages.show('Something went wrong', { cssClass: 'alert-danger', timeout: 3000 });
     });
-  }
+}
   ngOnInit() {
     this.activeRouter.params.subscribe((params) => {
       // tslint:disable-next-line:prefer-const
       let id = params['id'];
       this.moviesService.getMovie(id)
-        .then(movie => {
+        .subscribe(movie => {
           this.movie = movie;
         });
     });
@@ -59,21 +71,21 @@ export class MovieComponent implements OnInit {
       // tslint:disable-next-line:prefer-const
       let id = params['id'];
       this.moviesService.getReview(id)
-        .then(review => {
+        .subscribe(review => {
           console.log(review);
           this.review = review;
         });
     });
-
     this.activeRouter.params.subscribe((params) => {
       // tslint:disable-next-line:prefer-const
       let id = params['id'];
       this.moviesService.getComments(id)
-        .then(comments => {
+        .subscribe(comments => {
           console.log(comments);
           this.comments = comments;
         });
     });
+
   }
 }
 

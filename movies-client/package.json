@@ -30,6 +30,7 @@
     "jquery": "^3.3.1",
     "rxjs": "^6.2.1",
     "rxjs-compat": "^6.2.1",
+    "winston": "^3.0.0",
     "zone.js": "^0.8.26"
   },
   "devDependencies": {

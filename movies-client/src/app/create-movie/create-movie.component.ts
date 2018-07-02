@@ -18,7 +18,7 @@ export class CreateMovieComponent {
     addMovie(addmovie: any): void {
         if (!addmovie) { return; }
         this.moviesService.createMovie(addmovie)
-          .then(movie => {
+          .subscribe(movie => {
            console.log(movie);
            this.newMovie.push(movie.addmovie);
           });
