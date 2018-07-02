@@ -7,7 +7,7 @@ import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
-const apiUrl = 'http://localhost:8000/movies';
+const apiUrl = '/movies';
 
 @Injectable({
   providedIn: 'root'
@@ -19,6 +19,7 @@ export class MoviesService {
   moviesUrl = '/movies/';
   reviewUrl = '/review';
   commentsUrl = '/comment';
+  addCommentsUrl = '/comments';
   movieUrl = '/movies';
   constructor(private http: HttpClient) { }
   // function to extract data from rensponse
@@ -69,7 +70,7 @@ export class MoviesService {
   }
   // Adds comments
   addReview(author, description): Observable<any> {
-    const uri = 'http://localhost:8000/movies/comments/';
+    const uri = `${apiUrl + this.addCommentsUrl}`;
     const obj = {
       author: author,
       description: description
