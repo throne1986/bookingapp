@@ -23,7 +23,10 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "src/node_modules/primeng/resources/themes/omega/theme.css",
+              "src/node_modules/primeng/resources/primeng.min.css",
+              "src/node_modules/primeicons/primeicons.css"
             ],
             "stylePreprocessorOptions": { 
               "includePaths": [ "./src/", "./src/sass/" ]

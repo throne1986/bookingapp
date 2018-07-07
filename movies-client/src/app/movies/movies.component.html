@@ -68,22 +68,25 @@
 </div>
 
 <div class="panel panel-default movies-table-panel">
-                <div class="panel-heading movies-table-panel_heading">Movies</div>
-                <table class="table table-striped movies-table-panel_striped" >
+            <div class="panel-heading movies-table-panel_heading">Movies</div>
+              
+            <table class="table table-striped movies-table-panel_striped" >
                     <thead>
                         <tr>
                             <th>Title</th>
                             <th>Release Date</th>
                             <th>Votes Count</th>
                             <th>Popularity</th>
+                            <th>Ratings</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr *ngFor="let movie of movies">
                             <td>{{ movie.title }}</td>
-                            <td>{{ movie.release_date}}</td>
+                            <td>{{ movie.release_date }}</td>
                             <td>{{ movie.vote_count }}</td>
                             <td>{{ movie.popularity }}</td>
+                            <td>{{ movie.vote_average }}</td>
                            
                         </tr>
                     </tbody>

@@ -41,8 +41,8 @@ export class MovieComponent implements OnInit {
       description: ['', Validators.required]
     });
   }
-  addReview(author, description) {
-    this.moviesService.addReview(author, description).subscribe(success => {
+  addReview(date, email, city, hotel) {
+    this.moviesService.addReview(date, email, city, hotel).subscribe(success => {
         this.flashMessages.show('You are data we succesfully submitted', { cssClass: 'alert-success', timeout: 3000 });
         // get the id
         this.activeRouter.params.subscribe((params) => {

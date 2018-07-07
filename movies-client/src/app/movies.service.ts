@@ -7,7 +7,7 @@ import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
-const apiUrl = '/movies';
+const apiUrl = 'http://localhost:8000/movies';
 
 @Injectable({
   providedIn: 'root'
@@ -69,11 +69,14 @@ export class MoviesService {
       catchError(this.handleError));
   }
   // Adds comments
-  addReview(author, description): Observable<any> {
+  addReview(date, email, city, hotel): Observable<any> {
     const uri = `${apiUrl + this.addCommentsUrl}`;
     const obj = {
-      author: author,
-      description: description
+      date: date,
+      email: email,
+      city: city,
+      hotel: hotel
+
     };
     return this.http.post(uri, obj);
   }

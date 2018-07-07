@@ -1,10 +1,162 @@
+/* styles.css */ 
+@import '../node_modules/primeng/resources/themes/omega/theme.css';
+@import '../node_modules/primeng/resources/primeng.min.css';
+@import '~igniteui-angular/lib/core/styles/themes/index';
+@include igx-core();
+@include igx-theme($default-palette);
+.ui-datepicker.ui-widget .ui-datepicker-calendar thead th{
+    background: rgba(0,0,0,0.1);
+    color: white;
+    border: none;
+}
+.ui-datepicker.ui-widget .ui-datepicker-header{
+    border: none;
+}
+.ui-state-highlight{
+    background: #0375be;
+}
+.ui-widget, .ui-widget * {
+    background: rgba(0,0,0,0.1);
+    border-radius: 30px;
+ 
+}
+.ui-datepicker.ui-datepicker-inline{
+    width: 100%;
+}
+.ui-datepicker-title, .ui-widget-content, .ui-widget-content a{
+    color: white;
+}
+.ui-datepicker table{
+    height: 300px;
+}
+.ui-datepicker.ui-widget .ui-datepicker-calendar td a{
+    padding: 12px;
+}
+.ui-datepicker.ui-widget .ui-datepicker-calendar td a.ui-state-highlight {
+    background-color:deepskyblue;
 
+}
+.igx-calendar {
+    border-radius: 30px;
+    height: 339px;
+    background-color: rgba(0,0,0,0.5);
+    &__header{
+        display: none;
+    }
+    &__date{
+        color: white;
+    }
+    &__label{
+        color: white;
+    }
+}
+.date__el{
+    color: white;
+}
+.prev, .next{
+    color: white;
+}
+.sample-wrapper {
+    width: inherit;
+    position: relative;
+    height: 100%;
+    margin: 0 auto;
+    background: transparent;
+}
+
+.sample-content {
+    display: flex;
+    flex-grow: 1;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    padding: 0;
+    -webkit-animation: fade-in .3s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+    -moz-animation: fade-in .3s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+    animation: fade-in .3s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+.sample-column {
+    display: flex;
+    flex-flow: column nowrap;
+    flex: 1 0 25%;
+    align-content: flex-start;
+    margin: 16px;
+    min-width: 280px;
+}
+
+.sample-title {
+    color: #0375be;
+    margin-bottom: 24px;
+}
+
+.sample-title .light {
+    font-weight: 400;
+}
+
+.sample-description {
+    font-size: 14px;
+    font-weight: normal;
+    color: #717171;
+}
+
+@-webkit-keyframes color-change-2x {
+    0% {
+        background: #fdf8f0;
+    }
+    100% {
+        background: #f6e7ec;
+    }
+}
+
+@keyframes color-change-2x {
+    0% {
+        background: #fdf8f0;
+    }
+    100% {
+        background: #f6e7ec;
+    }
+}
+
+@-webkit-keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+.error > div > div {
+    background-color: red !important;
+}
+.headerAlignSyle {
+    text-align: right !important;
+}
+
+
+
+
+
+
+
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 body{
     font-family:poppins,sans-serif;
     padding:0;
     margin:0;
     overflow-x:hidden;
-    background: url("/assets/bg-pattern.png"),linear-gradient(to left,#7b4397,#dc2430);
+    //background: url("/assets/bg-pattern.png"),linear-gradient(to left,#7b4397,#dc2430);
+}
+.btn-light{
+    color: white !important;
 }
 .movie-navbar{
     background:#4b8df9;
