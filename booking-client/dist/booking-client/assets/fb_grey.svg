@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="11px" height="20px" viewBox="0 0 11 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>fb_grey</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.200000003">
+        <g id="Desktop-Copy" transform="translate(-381.000000, -417.000000)" fill="#000000">
+            <g id="Group-5" transform="translate(377.000000, 337.000000)">
+                <g id="Facebook" transform="translate(4.000000, 80.000000)">
+                    <path d="M3.07582168,19.7890206 L3.07582168,10.6754714 L-1.68499754e-25,10.6754714 L-1.68499754e-25,7.39820917 L3.07582166,7.39820917 L3.07582168,4.99510222 C3.07582168,4.99510222 2.85456644,-1.08785846e-17 7.34541829,-1.08785846e-17 L10.9781139,-1.08785846e-17 L10.9781137,3.33905886 L8.71455819,3.33905886 C8.71455819,3.33905886 7.0486693,3.25204767 7.03053967,4.9070241 L7.03053948,7.39820917 L10.692609,7.39820917 L10.1644235,10.6754714 L6.99428071,10.6754714 L6.99428071,19.9053964 L3.07582168,19.9053964 L3.07582168,19.7890206 Z" id="fb_grey"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
