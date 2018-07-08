@@ -43,7 +43,7 @@ export class BookingService {
     };
     return this.http.post(uri, obj);
   }
- 
+
   // Errors Handler
   private handleError(error: HttpErrorResponse) {
     if (error.error instanceof ErrorEvent) {
