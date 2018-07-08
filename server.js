@@ -21,7 +21,7 @@ mongoose.connection.on('error', (err) => {
 
 const app = express();
 
-const movies = require('./app/routes/movies');
+const booking= require('./app/routes/booking');
 
 // Port Number
 const port = process.env.PORT || 8000
@@ -30,17 +30,17 @@ const port = process.env.PORT || 8000
 app.use(cors());
 
 // Set Static Folder
-app.use(express.static(path.join(__dirname, '/movies-client/dist/movies-client')));
+app.use(express.static(path.join(__dirname, '/booking-client/dist/booking-client')));
 // Body Parser Middleware
 app.use(bodyParser.json());
 
-app.use('/movies', movies);
+app.use('/booking', booking);
 app.get('/', (req, res) => {
   res.send('invaild endpoint');
 });
 
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname + '/movies-client/dist/movies-client/index.html'));
+  res.sendFile(path.join(__dirname + '/booking-client/dist/booking-client/index.html'));
 });
 
 // Start Server

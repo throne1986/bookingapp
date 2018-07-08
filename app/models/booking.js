@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
 const config = require('../config/database');
 
-// Comments Schema
-const CommentsSchema = mongoose.Schema({
+// Booking Schema
+const BookingSchema = mongoose.Schema({
   date: {
     type:Date,
     required: true
@@ -22,7 +22,7 @@ const CommentsSchema = mongoose.Schema({
     required: true
   }
 }, {
-  collection: 'comments'
+  collection: 'booking'
 });
 
-const Comments = module.exports = mongoose.model('Comments', CommentsSchema);
+const Booking = module.exports = mongoose.model('Booking', BookingSchema);
