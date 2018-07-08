@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="22px" viewBox="0 0 16 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>arrows</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-Copy" transform="translate(-1353.000000, -3011.000000)" fill="#000000">
+            <g id="Group" transform="translate(0.000000, 2591.000000)">
+                <g id="Group-14">
+                    <g id="Group-11" transform="translate(1013.250000, 401.000000)">
+                        <g id="Group-10-Copy" transform="translate(340.000000, 19.000000)">
+                            <path d="M7.5,22 L0,13 L15,13 L7.5,22 Z M7.5,-1.77635684e-15 L15,9 L0,9 L7.5,-1.77635684e-15 Z" id="arrows"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
