@@ -14,7 +14,7 @@ Verify that you are running at least node v4.x.x and npm 3.x.x by running node -
 
 I recommend nvm for managing multiple versions of node and npm.
 ```
-git clone https://github.com/gruby-murzyn/movies-database
+git clone https://github.com/gruby-murzyn/booking-database
 ```
 
 ### Installing
@@ -33,7 +33,7 @@ Install NPM  if you installed nodejs dont worry you have npm with it for all ope
 ## Create a new project 
 Clone this repo into new project folder (e.g., my-proj).
 ```
-git clone https://github.com/gruby-murzyn/movies-database.git my-proj
+git clone https://github.com/gruby-murzyn/booking-database.git my-proj
 cd my-proj
 ```
 End with an example of getting some data out of the system or using it for a little demo
@@ -71,7 +71,7 @@ Ctrl-C.
 ### Running the project locally
 for backend run do the following
 ```
-in cmd run : cd movies_database
+in cmd run : cd booking_database
 ```
 ```
 in cmd run: npm run dev 
@@ -80,7 +80,7 @@ you will see we are live at port 8000
 
 ### for front end please do the following:
 ```
-in cmd  when your inside a main folder: movies-database run: cd movies-client
+in cmd  when your inside a main folder: booking-database run: cd booking-client
 ```
 ```
 in cmd run : ng serve

@@ -1,5 +1,5 @@
 {
-  "name": "movies-database",
+  "name": "booking-database",
   "version": "1.0.0",
   "description": "a simple movie database Rest API",
   "main": "index.js",
