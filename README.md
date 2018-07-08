@@ -1,6 +1,5 @@
-# Movie Database
-
-simple REST API  - a basic movie database interacting with external API. 
+# Booking App
+simple booking app
 
 ## How to get started
 
