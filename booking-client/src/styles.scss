@@ -9,6 +9,9 @@
     position: relative;
     background: transparent;
 }
+.ui-calendar{
+    display:inline;
+}
 .ui-datepicker-prev::before{
     content: "\f053";
     font-family: FontAwesome;
@@ -67,7 +70,7 @@ border: none;
 }
 @media (max-width: 480px) and (min-width: 320px){
     .ui-datepicker.ui-datepicker-inline{
-        padding: 10px !important;
+        padding: 10px;
     }
 }
 
