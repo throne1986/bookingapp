@@ -42,8 +42,8 @@
   },
   "engines": {
     "node": "8.9.4",
-     "npm": "5.6.0"
-   },
+    "npm": "5.6.0"
+  },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.6.8",
     "@angular/language-service": "^6.0.3",

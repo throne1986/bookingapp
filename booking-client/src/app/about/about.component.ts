@@ -16,7 +16,10 @@ export class AboutComponent implements OnInit {
   angForm: FormGroup;
   // tslint:disable-next-line:max-line-length
   validEmail = false;
-  restictedBookingDates: Array<Date>;
+  restrictedBookingDates = [
+    new Date(2018, 6, 23),
+    new Date(2018, 6, 19)
+  ];
 
   cities = [
     {
@@ -69,7 +72,7 @@ export class AboutComponent implements OnInit {
   }
   onChange(newValue) {
     // tslint:disable-next-line:max-line-length
-    const validEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    const validEmail = /^(([^<>()\[\]\\.,;:\s@']+(\.[^<>()\[\]\\.,;:\s@']+)*)|('.+'))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     if (validEmail.test(newValue)) {
       this.validEmail = true;
     } else {
@@ -112,10 +115,6 @@ export class AboutComponent implements OnInit {
 
 
   ngOnInit() {
-    const today = new Date('July 19, 2018');
-    const invalidDate = new Date();
-    invalidDate.setDate(today.getDate());
-    this.restictedBookingDates = [today, invalidDate];
   }
 
 }

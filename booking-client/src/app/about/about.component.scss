@@ -1,18 +1,28 @@
 /* styles.css */
+
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 .about-description {
   margin-top: 739px;
   padding: 0px;
 }
-.global-container{
-    overflow: auto;
+
+.dot::after {
+  content: "•";
+  color: blue;
+  font-size: 40px;
 }
+
+.global-container {
+  overflow: auto;
+}
+
 .about-booking-input {
   border: none;
   background-size: cover;
   overflow: auto;
   background: url('../../assets/booking_bg.png')
 }
+
 .about-booking_form {
   background-color: white;
   padding: 30px;
@@ -102,8 +112,8 @@ h2:after {
     &_calendar {
       padding: 0px;
     }
-    &_input{
-        overflow: auto;
+    &_input {
+      overflow: auto;
     }
   }
   .ui-datepicker.ui-datepicker-inline {

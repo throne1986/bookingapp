@@ -52,11 +52,11 @@
     <form [formGroup]="angForm" class="form-element">
       <div class="col-sm-4 offset-sm-2 about-booking_calendar">
         <div class="form-group form-element_date">
-          <p-calendar formControlName="date"  [inline]="true" [disabledDates]="restictedBookingDates"  [minDate]="minimumDate" tabindex="0" readonlyInput="true">
+          <p-calendar [inline]="true" [disabledDates]="restrictedBookingDates" [minDate]="minimumDate" tabindex="0" readonlyInput="true">
             <ng-template pTemplate="date" let-date>
-                <span [ngStyle]="{backgroundColor: (date.day ==19) ? '#7cc67c' : 'inherit'}"   style="border-radius:50%">{{date.day}}</span>
+              <span class="dot" [ngClass]="{'dot': date.day === 19}">{{date.day}}</span>
             </ng-template>
-        </p-calendar>
+          </p-calendar>
         </div>
       </div>
       <div class="col-sm-4 about-booking_form">
@@ -70,17 +70,17 @@
           </div>
         </div>
         <div class="input-group mb-3 form-element_city">
-            <select class="custom-select" id="inputGroupSelect01" #cityName (change)="changeSelect(cityName.value)" formControlName='city'>
-                    <option selected *ngFor="let city of cities" [ngValue]="city.cityName">{{city.cityName}}</option>
-        
-                  </select>
-          </div>
-          <div class="input-group mb-3 form-element_hotel">
-            <select class="custom-select" id="inputGroupSelect01" #hotelName formControlName='hotel'>
-                    <option selected *ngFor="let hotel of hotels" [ngValue]="hotel.hotelName">{{hotel.hotelName}}</option>
-        
-                  </select>
-          </div>
+          <select class="custom-select" id="inputGroupSelect01" #cityName (change)="changeSelect(cityName.value)" formControlName='city'>
+            <option selected *ngFor="let city of cities" [ngValue]="city.cityName">{{city.cityName}}</option>
+
+          </select>
+        </div>
+        <div class="input-group mb-3 form-element_hotel">
+          <select class="custom-select" id="inputGroupSelect01" #hotelName formControlName='hotel'>
+            <option selected *ngFor="let hotel of hotels" [ngValue]="hotel.hotelName">{{hotel.hotelName}}</option>
+
+          </select>
+        </div>
         <div class="form-group">
           <button type="submit" (click)="addBooking(date, email.value, cityName.value , hotelName.value)" class="btn btn-primary btn-block form-element_btn"
             [disabled]="!validEmail">Book</button>
